@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Space+Mono&display=swap');
+
+body{
+    font-family:sans-serif;
+    background-color: rgba(248, 135, 158, 0.801);
+    color:#2E1A47;    
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+}
+.title{
+    font-size: 30px;
+    font-family: sans-serif;
+    text-align: center;
+}
+.heart{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.cont{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#diary{
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+    background-color: aliceblue;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: #2E1A47;
+}
+#name{
+    font-family: /*imported font*/ cursive;
+    text-align: center;
+}
+.profPic{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.footer{
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+}
