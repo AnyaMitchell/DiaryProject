@@ -2,29 +2,71 @@
 
 body{
     font-family:sans-serif;
-    background-color: rgba(248, 135, 158, 0.801);
+    background-color: #f8879ecc;
     color:#2E1A47;    
     margin: 0;
     padding: 0;
     max-width: 100%;
 }
+
+
+/*index*/
 .title{
     font-size: 30px;
     font-family: sans-serif;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
+
 .heart{
-    display:block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* transition: img 2s linear; */
+    animation: wiggle 2s linear infinite;
 }
+@keyframes wiggle {
+    0%, 7% {
+      transform: rotateZ(0);
+    }
+    15% {
+      transform: rotateZ(-15deg);
+    }
+    20% {
+      transform: rotateZ(10deg);
+    }
+    25% {
+      transform: rotateZ(-10deg);
+    }
+    30% {
+      transform: rotateZ(6deg);
+    }
+    35% {
+      transform: rotateZ(-4deg);
+    }
+    40%, 100% {
+      transform: rotateZ(0);
+    }
+  }
+
+.title2{
+    font-size: 30px;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+
+/*contents*/
 .cont{
     display:block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
 }
+
 #diary{
     text-align: center;
     padding: 20px;
@@ -34,18 +76,28 @@ body{
     border-style: solid;
     border-color: #2E1A47;
 }
+
+
 #name{
-    font-family: /*imported font*/ cursive;
+    font-family: 'Indie Flower', cursive;
+    font-size: 50px;
     text-align: center;
 }
+
 .profPic{
-    display:block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+    display: flex;
+    justify-content: center;
+    transition: img 2s linear;
 }
+
 .footer{
-    text-align: center;
-    padding: 20px;
-    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
 }
+
+/*about*/
+
+
+/*diary*/
