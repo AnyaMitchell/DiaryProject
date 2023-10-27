@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Space+Mono&display=swap');
 
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    max-width: 100%;
+}
+a{
+    text-decoration: none; 
+}
+ul{
+    list-style-type: none;
+}
 body{
     font-family:sans-serif;
     background-color: #f8879ecc;
@@ -9,22 +21,62 @@ body{
     max-width: 100%;
 }
 
+/* Nav */
+.nav > ul{
+    overflow: hidden;
+    list-style-type: none;
+}
+.nav > ul > li {
+    display: inline;
+    text-align: center;
+    padding: 10px;
+}
+.nav > ul > li > a {
+    text-decoration: none;
+    color:#2E1A47;
+}
+
+/* Footer */
+.footer{
+    color: black;
+    overflow: hidden;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    background-color: aqua;
+}
+.footer > ul{
+    overflow: hidden;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
 
 /*index*/
-.title{
+.container1{
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0;
+}
+
+#title{
     font-size: 30px;
     font-family: sans-serif;
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    padding: 20px;
 }
 
-.heart{
+#heart{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* transition: img 2s linear; */
     animation: wiggle 2s linear infinite;
+    padding: 20px;
 }
 @keyframes wiggle {
     0%, 7% {
@@ -50,25 +102,32 @@ body{
     }
   }
 
-.title2{
+#title2{
     font-size: 30px;
     font-family: sans-serif;
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    padding: 20px;
 }
 
 
 /*contents*/
 .cont{
-    display:block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 20px;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
 }
 
 #diary{
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
     margin: 20px;
     background-color: aliceblue;
@@ -77,27 +136,311 @@ body{
     border-color: #2E1A47;
 }
 
-
 #name{
-    font-family: 'Indie Flower', cursive;
-    font-size: 50px;
-    text-align: center;
-}
-
-.profPic{
-    display: flex;
-    justify-content: center;
-    transition: img 2s linear;
-}
-
-.footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
+    font-family: 'Indie Flower', cursive;
+    font-size: 50px;
 }
 
+.photoMontage {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    padding-left: 65px;
+    margin: 20px; 
+}
+  
+.photoMontage > img {
+    height: 150px;
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    offset-path: path('m 0 50 q 50-30 100-30 t 100 30 100 0 100-30 100 30');
+    box-shadow: 1px 1px 3px #0008;
+    transition: transform .4s ease-out, offset-path .4s cubic-bezier(.77,-1.17,.75,.84),box-shadow .3s, z-index .3s;
+    z-index: 0;
+}
+  
+.photoMontage > img:hover {
+    transform: scale(3);
+    offset-path: path('m 5 65 q 45-0 90-0 t 90 0 90 0 90-0 90 0');
+    box-shadow: 3px 4px 10px #0006;
+    z-index: 999;
+}
+.photoMontage > img:nth-last-child(3):first-child {
+    offset-distance: 27%;
+}
+  .photoMontage > img:nth-last-child(2):nth-child(2) {
+    offset-distance: 49%;
+}
+.photoMontage > img:last-child:nth-child(3) {
+    offset-distance: 81%;
+}
+  
+
 /*about*/
+#about{
+    margin-left: 10px;
+}
+
+.aboutGridContainer{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(12, 1fr);
+    max-width: 100%;
+}
+
+.artists{ 
+    grid-column: 1 / span 13;
+    padding-top: 20px;  
+    text-align: center;
+    font-size: 20px;
+}
+
+.artistAns1{
+    grid-column: 1 / span 4;
+    padding-top: 20px;
+    text-align: center; 
+    font-family: 'Indie Flower', cursive;
+    font-size: 30px;
+}
+.artistAns2{
+    grid-column: 5 / span 4;
+    padding-top: 20px;
+    text-align: center; 
+    font-family: 'Indie Flower', cursive;
+    font-size: 30px;
+}
+.artistAns3{
+    grid-column: 9 / span 4;
+    padding-top: 20px;
+    text-align: center; 
+    font-family: 'Indie Flower', cursive;
+    font-size: 30px;
+}
+
+.artist1{ 
+    grid-column: 1 / span 4;
+    max-height: 100%;
+    max-width: 100%; 
+    place-items: center; 
+    padding: 10px;   
+    border: #2E1A47 solid 1px;
+}
+.artist2{
+    grid-column: 5 / span 4;
+    max-height: 100%;
+    max-width: 100%; 
+    place-items: center; 
+    padding: 10px;   
+    border: #2E1A47 solid 1px;
+}
+.artist3{
+    grid-column: 9 / span 4;
+    max-height: 100%;
+    max-width: 100%; 
+    place-items: center; 
+    padding: 10px;   
+    border: #2E1A47 solid 1px; 
+}
+
+.spotify1{ 
+    grid-column: 1 / span 4;
+    place-items: center; 
+}
+.spotify2{ 
+    grid-column: 5 / span 4;
+    place-items: center; 
+}
+.spotify3{ 
+    grid-column: 9 / span 4;
+    place-items: center; 
+}
+
+.books{ 
+    grid-column: 1 / span 13;    
+    text-align: center;
+    font-size: 20px;
+}
+
+.bookAns1{
+    grid-column: 1 / span 4;
+    padding-top: 20px;
+    text-align: center; 
+    font-family: 'Indie Flower', cursive;
+    font-size: 30px;
+}
+.bookAns2{
+    grid-column: 5 / span 4;
+    padding-top: 20px;
+    text-align: center; 
+    font-family: 'Indie Flower', cursive;
+    font-size: 30px;
+}
+.bookAns3{
+    grid-column: 9 / span 4;
+    padding-top: 20px;
+    text-align: center; 
+    font-family: 'Indie Flower', cursive;
+    font-size: 30px;
+}
+
+.book1{  
+    grid-column: 1 / span 4;
+    max-height: 100%;
+    max-width: 100%; 
+    place-items: center; 
+    padding: 10px;   
+    border: #2E1A47 solid 1px; 
+}
+.book2{
+    grid-column: 5 / span 4;
+    max-height: 100%;
+    max-width: 100%; 
+    place-items: center; 
+    padding: 10px;   
+    border: #2E1A47 solid 1px;
+}
+.book3{
+    grid-column: 9 / span 4;
+    max-height: 100%;
+    max-width: 100%; 
+    place-items: center; 
+    padding: 10px;   
+    border: #2E1A47 solid 1px;
+}
+
+.films{  
+    grid-column: 1 / span 13;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 30px;
+}
+
+.filmAns1{
+    grid-column: 1 / span 4;
+    padding-top: 20px;
+    text-align: center; 
+    font-family: 'Indie Flower', cursive;
+    font-size: 30px;
+}
+.filmAns2{
+    grid-column: 5 / span 4;
+    padding-top: 20px;
+    text-align: center; 
+    font-family: 'Indie Flower', cursive;
+    font-size: 30px;
+}
+.filmAns3{
+    grid-column: 9 / span 4;
+    padding-top: 20px;
+    text-align: center; 
+    font-family: 'Indie Flower', cursive;
+    font-size: 30px;
+}
+
+.film1{ 
+    grid-column: 1 / span 4;
+    max-height: 100%;
+    max-width: 100%; 
+    place-items: center; 
+    padding: 10px;   
+    border: #2E1A47 solid 1px;  
+}
+.film2{
+    grid-column: 5 / span 4;
+    max-height: 100%;
+    max-width: 100%; 
+    place-items: center; 
+    padding: 10px;   
+    border: #2E1A47 solid 1px;
+}
+.film3{
+    grid-column: 9 / span 4;
+    max-height: 100%;
+    max-width: 100%; 
+    place-items: center; 
+    padding: 10px;   
+    border: #2E1A47 solid 1px;
+}
+
+.youTube1{ 
+    grid-column: 1 / span 4;
+    max-height: 100%;
+    max-width: 100%; 
+    place-items: center; 
+    padding: 10px; 
+}
+.youTube2{ 
+    grid-column: 5 / span 4;
+    max-height: 100%;
+    max-width: 100%; 
+    place-items: center; 
+    padding: 10px; 
+}
+.youTube3{ 
+    grid-column: 9 / span 4;
+    max-height: 100%;
+    max-width: 100%; 
+    place-items: center; 
+    padding: 10px; 
+}
+
+.top{
+    grid-column: 1 / span 13;
+    text-align: center;
+}
 
 
 /*diary*/
+.dearDiary{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(12, 1fr);
+    max-width: 100%;
+}
+.box1{ 
+    grid-column: 1 / span 13;
+    padding: 10px;
+    text-align: center;
+}
+.box2{
+    grid-column: 3 / span 8;
+    padding: 10px;
+    text-align: center;
+    border:#2E1A47 solid 1px;
+}
+.box3{
+    grid-column: 2 / span 7;
+    padding: 10px;
+    text-align: center;
+    border:#2E1A47 solid 1px;
+}
+.box4{
+    grid-column: 9 / span 3;
+    padding: 10px;
+    text-align: center;
+    border:#2E1A47 solid 1px;
+}
+.box5{
+    grid-column: 2 / span 10;
+    padding: 10px;
+    text-align: center;
+    border:#2E1A47 solid 1px;
+}
+.box6{
+    grid-column: 11 / span 2;
+    padding: 10px;
+    text-align: center;
+}
+.box7{
+    grid-column: 1 / span 3;
+    padding: 10px;
+    text-align: center;
+}
