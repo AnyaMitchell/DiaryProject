@@ -153,8 +153,12 @@ body{
     padding-left: 65px;
     margin: 20px; 
 }
+
+.photoMontage > a {
+    display: block;
+}
   
-.photoMontage > img {
+.photoMontage > a > img {
     height: 150px;
     width: 100px;
     display: flex;
@@ -167,19 +171,19 @@ body{
     z-index: 0;
 }
   
-.photoMontage > img:hover {
+.photoMontage > a > img:hover {
     transform: scale(3);
     offset-path: path('m 5 65 q 45-0 90-0 t 90 0 90 0 90-0 90 0');
     box-shadow: 3px 4px 10px #0006;
     z-index: 999;
 }
-.photoMontage > img:nth-last-child(3):first-child {
+.photoMontage > a:nth-last-child(3):first-child {
     offset-distance: 27%;
 }
-  .photoMontage > img:nth-last-child(2):nth-child(2) {
+  .photoMontage > a:nth-last-child(2):nth-child(2) {
     offset-distance: 49%;
 }
-.photoMontage > img:last-child:nth-child(3) {
+.photoMontage > a:last-child:nth-child(3) {
     offset-distance: 81%;
 }
   
